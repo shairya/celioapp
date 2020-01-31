@@ -1,0 +1,192 @@
+/* You can add global styles to this file, and also import other style files */
+body{background: #f1f4f6; font-size:0.9 ;}
+.site-nav {
+    border-right: 1px solid #eee;
+    width: 15em;
+    position: fixed;
+    z-index: 1030;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: .3s cubic-bezier(.86,0,.07,1);
+    transition: .3s cubic-bezier(.86,0,.07,1);
+    box-shadow: 1px 0 2px rgba(0,0,0,.05);
+    background: #fff;
+    -webkit-transform: translate(-100%);
+    -ms-transform: translate(-100%);
+    transform: translate(-100%);
+}
+.client {
+    text-align: center;
+    padding: 10px 15px;
+}
+.client h1 {
+    margin: 0;
+    padding: 0;
+}
+.content-container {
+    width: 100%;
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    transform: translate(0);
+    position: relative;
+    padding: 1.1em 1.1rem;
+    padding-top: 55px;
+    
+}
+.top-navbar {
+    background: #fff;
+    border-color: #e1e8ed;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 8;
+    transition: all 0.3s ease-in-out 0s;
+    padding: 15px 15px;
+    border-bottom: 1px solid rgb(225, 232, 237);
+}
+.nav .nav-item a svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    color:#000;
+}
+.nav .nav-item a {
+    color:#000;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+}
+.nav .nav-item{
+    border-bottom: 1px solid #f1f1f1;
+}
+.block-header h1 {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.nav.flex-column .dropdown-menu{
+    position: relative !important;
+    transform: none !important;
+    width: 100% !important;
+    border: 0;
+    padding: 0;
+}
+.nav.flex-column .dropdown-toggle::after {
+    float: right;
+    position: relative;
+    top: 10px;
+}
+.nav.flex-column .show .dropdown-toggle::after {
+    border-bottom: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-top: 0;
+    border-left: 0.3em solid transparent;
+}
+.nav.flex-column .dropdown-menu .dropdown-item{
+    border-top: 1px solid #f1f1f1;
+}
+.block-header {
+    padding: 0.8rem 0px;
+}
+table{
+    border-spacing: 0 5px !important;
+}
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td{
+  border:0;
+}
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 0;
+    background: #fff;
+}
+table.dataTable.no-footer {
+    border-bottom: 0;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #333333 !important;
+    border: 1px solid #ffffff;
+    background-color: white;
+    background: linear-gradient(to bottom, white 0%, white 100%);
+}
+.dataTables_wrapper .dataTables_filter input, .dataTables_length select {
+    background: #fff;
+    padding: 4px 10px;
+    border: 1px solid #e1e8ed;
+    font-size: 0.8rem;
+    height: 34px;
+}
+.dataTables_length select {
+    width: 120px;
+    height: 34px;
+}
+.dataTables label {
+    font-size: 0.9rem;
+}
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate {
+    font-size: 0.9rem;
+}
+.dataTables_wrapper .btn {
+    padding: 2px 8px;
+    font-size: 14px;
+    margin: 0px 2px;
+    border-radius: 2px;
+}
+.body{
+    background: #fff;
+    border: 1px solid #e1e8ed;
+    color: #17191c;
+    padding:1.1rem;
+}
+.btn.disabled, .btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+.alert.col-sm-12 {
+    margin-left: 15px;
+    margin-right: 15px;
+    flex: initial;
+}
+
+@media (min-width: 992px) {
+.site-nav {
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    transform: translate(0);
+}
+.content-container {
+    width: calc(100% - 15em);
+    -webkit-transform: translate(15em);
+    -ms-transform: translate(15em);
+    transform: translate(15em);
+}
+
+.short-menu .content-container {
+    width: calc(100% - .75em);
+    -webkit-transform: translate(.75em);
+    -ms-transform: translate(.75em);
+    transform: translate(.75em);
+}
+.short-menu .site-nav{
+    -webkit-transform: translate(-95%);
+    -ms-transform: translate(-95%);
+    transform: translate(-95%);
+}
+}
+@media (max-width: 991px) {
+.short-menu .site-nav{
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    transform: translate(0);
+}
+.short-menu .content-container {
+    width: calc(100% - 15em);
+    -webkit-transform: translate(15em);
+    -ms-transform: translate(15em);
+    transform: translate(15em);
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    text-align: left;
+    width: 47%;
+    float: left;
+}
+}

@@ -1,0 +1,25 @@
+.navbar-menu {
+    cursor: pointer;
+}
+.nav.header-right .nav-item{
+    border-bottom: 0;
+}
+.nav.header-right .nav-item a{
+    padding: 0.1rem 1rem;
+}
+.nav.header-right .nav-item:last-child a{
+    padding-right: 0;
+}
+.nav.header-right .dropdown-menu.show {
+    display: block;
+    left: -120px;
+}
+.nav.header-right .dropdown-toggle::after{
+    display: none;
+}
+.nav.header-right .dropdown-menu {
+    box-shadow: 1px 2px 4px rgba(0,0,0,.15);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0;
+    margin-top: 16px;
+}
