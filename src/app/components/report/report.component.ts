@@ -16,6 +16,7 @@ export class ReportComponent implements OnInit {
   reportType = new Array();
   fileType = '';
   maxDate = new Date();
+  downloadFileName = 'SIS-Sale.csv';
 
   constructor(private apiService: ApiService) { }
 
@@ -34,7 +35,7 @@ export class ReportComponent implements OnInit {
       fieldSeparator  : ',',
       quoteStrings    : '"',
       decimalSeparator: '.',
-      filename        : 'SIS-Sale',
+      filename        : '',
       showLabels      : true, 
       showTitle       : false,
       useTextFile     : false,
@@ -43,8 +44,10 @@ export class ReportComponent implements OnInit {
       headers         : ["Channel","Code","Trn Date","Ean Code","Product Cost","MRP","Sales Qty","Cost of Sales Amt","Gross Sales","Disc Amt","Net Sales","Tax","Net Margin","Original Location Code","Original Location"]
     };
     if(this.fileType=='Stock') {
-      options.headers = ["Location","Code","Barcode No","Quantity","Original Location Code","Original Location"];
+      options.filename = 'SIS-SOH';
+      options.headers = ["Location","Date","Barcode No","Quantity","Original Location Code","Original Location"];
     } else if(this.fileType=='Sale') {
+      options.filename = 'SIS-Sale';
       options.headers = ["Channel","Code","Trn Date","Ean Code","Product Cost","MRP","Sales Qty","Cost of Sales Amt","Gross Sales","Disc Amt","Net Sales","Tax","Net Margin","Original Location Code","Original Location"];
     }
     
