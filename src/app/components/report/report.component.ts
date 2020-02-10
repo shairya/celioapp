@@ -68,8 +68,8 @@ export class ReportComponent implements OnInit {
             const data = response.data ? response.data : '';
             const filename = response.filename;
             if(this.fileType=='Stock') {
-              FileSaver.saveAs(environment.apiUrl+'/stockfiles/', 'SIS-SOH.csv');
               this.loader = false;
+              FileSaver.saveAs(environment.apiUrl+'/stockfiles/SIS-SOH.csv', 'SIS-SOH.csv');
             } else {
               
               for(var i=0; i<data.length; i++ ) {
