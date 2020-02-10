@@ -13,7 +13,7 @@
         <div class="form-group">
             <input *ngIf="!loader; else showLoader" type="submit" class="btn btn-primary btn-lg btn-block" value="Download" required />
             <ng-template #showLoader>
-                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Download" disabled="disabled" />
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Wait... download in progress." disabled="disabled" />
             </ng-template>
         </div>
         <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMessage">
