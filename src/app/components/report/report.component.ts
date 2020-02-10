@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { ApiService } from 'src/app/api/api.service';
 import { ExportToCsv } from 'export-to-csv';
+import { environment } from 'src/environments/environment';
+declare var require: any;
+const FileSaver = require('file-saver');
 
 @Component({
   selector: 'app-report',
@@ -57,28 +60,16 @@ export class ReportComponent implements OnInit {
       this.loader = true;
       var fromDate = moment(this.selected.startDate.valueOf()).format('YYYY-MM-DD');
       var toDate = moment(this.selected.endDate.valueOf()).format('YYYY-MM-DD');
-      var daterange = fromDate+':'+toDate;
+      var daterange = fromDate+':' + toDate;
       var a = [];
       if (daterange) {
         this.apiService.getReportData(daterange, this.fileType).subscribe((response: any) => {
           if(response.status === 200 && response.data.length) {
-            const data = response.data ? response.data : [];
+            const data = response.data ? response.data : '';
+            const filename = response.filename;
             if(this.fileType=='Stock') {
-              
-              for(var i=0; i<data.length; i++ ) {
-                let e = {
-                  location              : data[i].location,
-                  date                  : moment(data[i].date).format('MM/DD/YYYY'),
-                  barcodeNumber         : data[i].barcodeNumber,
-                  quantity              : data[i].quantity,
-                  originalLocationCode  : data[i].originalLocationCode,
-                  originalLocation      : data[i].originalLocation
-                };
-                a.push(e);
-              }
+              FileSaver.saveAs(environment.apiUrl+'/stockfiles/', 'SIS-SOH.csv');
               this.loader = false;
-              const csvExporter = new ExportToCsv(options);
-              csvExporter.generateCsv(a);
             } else {
               
               for(var i=0; i<data.length; i++ ) {
