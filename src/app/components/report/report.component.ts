@@ -71,29 +71,8 @@ export class ReportComponent implements OnInit {
               this.loader = false;
               FileSaver.saveAs(environment.apiUrl+'/stockfiles/SIS-SOH.csv', 'SIS-SOH.csv');
             } else {
-              
-              for(var i=0; i<data.length; i++ ) {
-                let e = {
-                  channel       : data[i].channel,
-                  code          : data[i].code,
-                  trnDate       : moment(data[i].trnDate).format('MM/DD/YYYY'),
-                  eanCode       : data[i].eanCode,
-                  productCost   : data[i].productCost,
-                  mrp           : data[i].mrp,
-                  salesQty      : data[i].salesQty,
-                  costOfSalesAmt: data[i].costOfSalesAmt,
-                  grossSales    : data[i].grossSales,
-                  discAmt       : data[i].discAmt,
-                  netSales      : data[i].netSales,
-                  tax           : data[i].netMargin,
-                  originalLocationCode : data[i].originalLocationCode,
-                  originalLocation : data[i].originalLocation
-                };
-                a.push(e);
-              }
               this.loader = false;
-              const csvExporter = new ExportToCsv(options);
-              csvExporter.generateCsv(a);
+              FileSaver.saveAs(environment.apiUrl + '/stockfiles/SIS-Sale.csv', 'SIS-Sale.csv');
             }
           } else {
             let e = {channel:'No record found!'};
